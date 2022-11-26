@@ -1,10 +1,10 @@
-import CountFactorial from "../src/classes/OperationClass/CountFactorial.js"
+import CountFactorial from '../src/classes/OperationClass/CountFactorial.js'
 
 const executeTests = [
   {
     title: 'Factorial of little number',
     value: '3',
-    result:  '6',
+    result: '6',
   },
   {
     title: 'Factorial of usual number',

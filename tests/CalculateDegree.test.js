@@ -1,4 +1,4 @@
-import CalculateDegree from "../src/classes/OperationClass/CalculateDegree.js"
+import CalculateDegree from '../src/classes/OperationClass/CalculateDegree.js'
 
 const executeTests = [
   {

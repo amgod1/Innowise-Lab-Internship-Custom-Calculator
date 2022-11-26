@@ -1,4 +1,4 @@
-import DegreeCube from "../src/classes/OperationClass/DegreeCube.js"
+import DegreeCube from '../src/classes/OperationClass/DegreeCube.js'
 
 const executeTests = [
   {

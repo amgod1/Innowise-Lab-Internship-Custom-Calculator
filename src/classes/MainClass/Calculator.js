@@ -14,9 +14,6 @@ import selectAction from '../../functions/selectAction.js'
 import checkInstance from '../../functions/checkInstance.js'
 import checkInstanceUnique from '../../functions/checkInstanceUnique.js'
 
-import '../../style.css'
-import '../../gradient.js'
-
 class Calculator extends RunCalculator {
   set1(command, value = this._value1) {
     this.setValue1(command.execute(value))

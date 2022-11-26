@@ -1,4 +1,4 @@
-import CalculateDiff from "../src/classes/OperationClass/CalculateDiff.js"
+import CalculateDiff from '../src/classes/OperationClass/CalculateDiff.js'
 
 const executeTests = [
   {
@@ -12,6 +12,12 @@ const executeTests = [
     firstValue: '998877665544332211',
     secondValue: '112233445566778899',
     result: '886644219977553312',
+  },
+  {
+    title: 'Difference of big and classic integer numbers',
+    firstValue: '112233445566778899',
+    secondValue: '1',
+    result: '112233445566778898',
   },
   {
     title: 'Difference of integer and float numbers',
@@ -43,6 +49,11 @@ const undoTests = [
     title: 'Get back after difference of two big integer numbers',
     firstValue: '998877665544332211',
     secondValue: '112233445566778899',
+  },
+  {
+    title: 'Get back after difference of big and classic integer numbers',
+    firstValue: '112233445566778899',
+    secondValue: '1',
   },
   {
     title: 'Get back after difference of integer and float numbers',

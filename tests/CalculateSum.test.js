@@ -14,6 +14,12 @@ const executeTests = [
     result: '1111111111111111110',
   },
   {
+    title: 'Sum of big and classic integer numbers',
+    firstValue: '112233445566778899',
+    secondValue: '1',
+    result: '112233445566778900',
+  },
+  {
     title: 'Sum of integer and float numbers',
     firstValue: '3.5',
     secondValue: '1',
@@ -43,6 +49,11 @@ const undoTests = [
     title: 'Get back after sum of two big integer numbers',
     firstValue: '112233445566778899',
     secondValue: '998877665544332211',
+  },
+  {
+    title: 'Get back after sum of big and classic integer numbers',
+    firstValue: '112233445566778899',
+    secondValue: '1',
   },
   {
     title: 'Get back after sum of integer and float numbers',

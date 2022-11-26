@@ -6,10 +6,7 @@ body {
 }
 
 *::-webkit-scrollbar {
-	width: 15px;
-}
-*::-webkit-scrollbar:hover {
-	cursor: pointer;
+	width: 5px;
 }
 
 *::-webkit-scrollbar-track {
@@ -53,6 +50,7 @@ body {
 .lil {
 	font-size: 12px;
 	text-align: end;
+	overflow: hidden;
 }
 
 .lil p {

@@ -1,4 +1,4 @@
-import DegreeSquare from "../src/classes/OperationClass/DegreeSquare.js"
+import DegreeSquare from '../src/classes/OperationClass/DegreeSquare.js'
 
 const executeTests = [
   {

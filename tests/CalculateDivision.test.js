@@ -39,15 +39,10 @@ const undoTests = [
     firstValue: '30',
     secondValue: '3',
   },
-  // {
-  //   title: 'Get back after division of two big integer numbers',
-  //   firstValue: '998877665544332211',
-  //   secondValue: '112233445566778899',
-  // },
   {
-    title: 'Get back after division of two almost big integer numbers',
-    firstValue: '987654321',
-    secondValue: '123456789',
+    title: 'Get back after division of two big integer numbers',
+    firstValue: '998877665544332211',
+    secondValue: '112233445566778899',
   },
   {
     title: 'Get back after division of integer and float numbers',

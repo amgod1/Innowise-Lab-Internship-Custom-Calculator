@@ -1,11 +1,11 @@
-import Percentage from "../src/classes/OperationClass/Percentage.js"
+import Percentage from '../src/classes/OperationClass/Percentage.js'
 
 const executeTests = [
   {
     title: 'Persent of positive integer number',
     value: '200',
     percent: '50',
-    result:  '100',
+    result: '100',
   },
   {
     title: 'Persent of positive float number',

@@ -1,4 +1,4 @@
-import getGradients from './functions/getGradients.js'
+import getGradients from './getGradients.js'
 
 if (localStorage.bg) {
   document.querySelector('body').style.background = `linear-gradient(to right, ${JSON.parse(localStorage.bg).join(', ')})`

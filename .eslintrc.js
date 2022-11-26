@@ -24,5 +24,6 @@ module.exports = {
     'no-plusplus': 0,
     'class-methods-use-this': 0,
     'no-mixed-operators': 0,
+    'no-undef': 0,
   },
 }
