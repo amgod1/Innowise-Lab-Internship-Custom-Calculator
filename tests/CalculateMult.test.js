@@ -14,6 +14,12 @@ const executeTests = [
     result: '112107482103740987777903741240815689',
   },
   {
+    title: 'Multiplication of big and classic integer numbers',
+    firstValue: '998877665544332211',
+    secondValue: '2',
+    result: '1997755331088664422',
+  },
+  {
     title: 'Multiplication of integer and float numbers',
     firstValue: '3.5',
     secondValue: '5',
@@ -43,6 +49,11 @@ const undoTests = [
     title: 'Get back after multiplication of two big integer numbers',
     firstValue: '998877665544332211',
     secondValue: '112233445566778899',
+  },
+  {
+    title: 'Get back after multiplication of big and classic integer numbers',
+    firstValue: '998877665544332211',
+    secondValue: '2',
   },
   {
     title: 'Get back after multiplication of integer and float numbers',
