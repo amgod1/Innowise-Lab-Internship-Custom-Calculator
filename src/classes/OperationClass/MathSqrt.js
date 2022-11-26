@@ -6,7 +6,7 @@ export default class MathSqrt {
   }
 
   execute() {
-    return `${Math.sqrt(this.changeNumber)}`
+    return `${correctValue(Math.sqrt(this.changeNumber))}`
   }
 
   undo() {

@@ -36,8 +36,10 @@ class Calculator extends RunCalculator {
       } else if (element === '.') {
         if (this.getValue1() === '') {
           this.set1(new Number1('0'))
+          this.set1(new Number1(element))
+        } else if (!this.getValue1().includes('.')) {
+          this.set1(new Number1(element))
         }
-        this.set1(new Number1(element))
       } else this.set1(new Number1(element))
       setResult(this.getValue1())
       setHelper('v1', this.getValue1())
@@ -47,8 +49,10 @@ class Calculator extends RunCalculator {
       } else if (element === '.') {
         if (this.getValue2() === '') {
           this.set2(new Number2('0'))
+          this.set2(new Number2(element))
+        } else if (!this.getValue2().includes('.')) {
+          this.set2(new Number2(element))
         }
-        this.set2(new Number2(element))
       } else this.set2(new Number2(element))
       setResult(this.getValue2())
       setHelper('v2', this.getValue2())
@@ -97,7 +101,7 @@ class Calculator extends RunCalculator {
 
   run() {
     if (!!this.getSign() && !!this.getValue2()) {
-      if (this.getSign().slice(-1) == '√' && this.getValue1() <= 0 && this.getValue2() % 2 === 0) { return }
+      if (this.getSign().slice(-1) === '√' && this.getValue1() <= 0 && this.getValue2() % 2 === 0) { return }
       this.calculate(selectAction(this.getSign().slice(-1), this.getValue2()))
     } else if (!!this.getValue1() && !!this.getSign() && !this.getValue2()) {
       this.getValue1().split('').map((el) => this.set2(new Number2(el)))

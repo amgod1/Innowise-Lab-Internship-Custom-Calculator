@@ -5,6 +5,23 @@ body {
 	height: 100%;
 }
 
+*::-webkit-scrollbar {
+	width: 15px;
+}
+*::-webkit-scrollbar:hover {
+	cursor: pointer;
+}
+
+*::-webkit-scrollbar-track {
+	background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #000000;
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+}
+
 .app-wrapper {
 	margin: 90px;
 	display: flex;

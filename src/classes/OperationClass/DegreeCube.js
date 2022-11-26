@@ -1,5 +1,4 @@
 import checkBigInt from '../../functions/checkBigInt.js'
-import correctValueShort from '../../functions/correctValueShort.js'
 import correctValue from '../../functions/correctValue.js'
 
 export default class DegreeCube {

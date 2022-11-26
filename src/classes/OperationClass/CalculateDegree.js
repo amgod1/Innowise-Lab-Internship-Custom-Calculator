@@ -1,8 +1,8 @@
 import correctValue from '../../functions/correctValue.js'
 
-function changeSign(num, check) {
-  return (check < 0) ? -num : num
-}
+// function changeSign(num, check) {
+//   return (check < 0) ? -num : num
+// }
 
 export default class CalculateDegree {
   constructor(s2) {

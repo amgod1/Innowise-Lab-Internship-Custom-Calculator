@@ -22,5 +22,7 @@ module.exports = {
     'no-nested-ternary': 0,
     'array-callback-return': 0,
     'no-plusplus': 0,
+    'class-methods-use-this': 0,
+    'no-mixed-operators': 0,
   },
 }

@@ -1,6 +1,5 @@
 import correctValue from '../../functions/correctValue.js'
 
-
 export default class Percentage {
   constructor(mainValue) {
     this.mainValue = mainValue

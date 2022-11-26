@@ -1,5 +1,4 @@
 import correctValue from '../../functions/correctValue.js'
-import checkBigInt from '../../functions/checkBigInt.js'
 
 export default class CalculateDivision {
   constructor(s2) {
