@@ -6,7 +6,8 @@
 
 > When you press the number keys, you will automatically set the first operand. As soon as you press ***an operation key*** (+, -, *, /, ^, √) you will be able to set the second operand. If you want to perform the selected operation, you must press ***the = key***. If you press the ***special operations keys*** (+/-, %, x!, x^2, x^3, 2√x, 3√x) the action will be executed to the last operand you set. If you want to return the previous value/prevent the operation you have to press the ***'back'*** key (works for all actions and operations except ***'memory keys'***). To delete all values and clear the input field press the ***'AC'*** key (does not clear calculator memory).
 
-- if you press ***zero*** key ***(0)*** more than once, the operand value will remain correct (you can't set invalid numbers like **'00'**, **'000'** and so on)
+- if you press ***zero (0)*** key more than once, the operand value will remain correct (you can't set invalid numbers like **'00'**, **'000'** and so on)
+- if you press any ***natural number*** key after ***zero (0)***, the operand value will remain correct (you can't set invalid numbers like **'02'**, **'049'** and so on)
 - only ***one point*** is possible (.) for a floating point number (your can't set invalid numbers like ***'2.12.3'***, ***'0.012.235.5'*** and so on)
 - if the first operand is not given and you press ***an operation key*** (+, -, *, /, ^, √), the first operand automatically ***becomes zero (0)*** and the next time you press the number key, you will set the second operand
 - if only the first operand and the sign of the operation are given and you press ***the = key***, the second operand ***equals the first operand*** and then the operation is executed
@@ -23,7 +24,7 @@
 
 ### Division operation (/)
 - if the ***first operand*** is missing, it is automatically replaced by ***zero (0)***, but the result is ***always zero (0)***
-- if the second operand is ***zero (0)***, the result is always ***'infinity'***
+- if the second operand is ***zero (0)***, the result is ***always zero (0)***
 - if the ***second operand*** is missing and ***the = key*** is pressed, it is automatically ***replaced*** by the first operand, and then the action is executed
 - works with integers and floating point numbers*
 
