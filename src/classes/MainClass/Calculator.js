@@ -37,6 +37,9 @@ class Calculator extends RunCalculator {
         } else if (!this.getValue1().includes('.')) {
           this.set1(new Number1(element))
         }
+      } else if (this.getValue1().length >= 1 && this.getValue1()[0] === '0' && this.getValue1()[1] !== '.' && this.getValue1()[1] !== '0') {
+        this.undoLast()
+        this.set1(new Number1(element))
       } else this.set1(new Number1(element))
       setResult(this.getValue1())
       setHelper('v1', this.getValue1())
@@ -50,6 +53,9 @@ class Calculator extends RunCalculator {
         } else if (!this.getValue2().includes('.')) {
           this.set2(new Number2(element))
         }
+      } else if (this.getValue2().length >= 1 && this.getValue2()[0] === '0' && this.getValue2()[1] !== '.' && this.getValue2()[1] !== '0') {
+        this.undoLast()
+        this.set2(new Number2(element))
       } else this.set2(new Number2(element))
       setResult(this.getValue2())
       setHelper('v2', this.getValue2())
@@ -140,7 +146,7 @@ class Calculator extends RunCalculator {
         setHelper('v1', (this.getValue1()) ? this.getValue1() : '')
       }
     } else if (checkInstance(command)) {
-      this.setValue1(command.undo(this.getValue1()))
+      this.setValue1(command.undo())
       this.setValue2(command.getSecondOperand())
       setHelper('v2', (command.getSecondOperand()))
       setHelper('v1', this.getValue1())

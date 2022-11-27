@@ -11,11 +11,13 @@ export default class CalculateDivision {
 
   execute(s1) {
     this.firstOperand = s1
-    return `${correctValue(Number(s1) / Number(this.secondOperand))}`
+    return (Number.isFinite(Number(s1) / Number(this.secondOperand)))
+      ? `${correctValue(Number(s1) / Number(this.secondOperand))}`
+      : '0'
   }
 
   undo() {
-    // return `${correctValue(Number(s1) * Number(this.secondOperand))}`
     return this.firstOperand
+    // return `${correctValue(Number(s1) * Number(this.secondOperand))}`
   }
 }

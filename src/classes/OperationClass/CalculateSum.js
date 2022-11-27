@@ -11,10 +11,12 @@ export default class CalculateSum {
   }
 
   execute(s1) {
-    return correctValue((checkBigInt(s1, this.secondOperand) + checkBigInt(this.secondOperand, s1)).toLocaleString('fullwide', { useGrouping: false }))
+    this.firstOperand = s1
+    return correctValue((checkBigInt(s1, this.secondOperand) + checkBigInt(this.secondOperand, s1)).toString())
   }
 
-  undo(s1) {
-    return correctValue((checkBigInt(s1, this.secondOperand) - checkBigInt(this.secondOperand, s1)).toLocaleString('fullwide', { useGrouping: false }))
+  undo() {
+    return this.firstOperand
+    // return correctValue((checkBigInt(s1, this.secondOperand) - checkBigInt(this.secondOperand, s1)).toString())
   }
 }

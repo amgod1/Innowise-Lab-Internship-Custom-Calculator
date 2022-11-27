@@ -7,7 +7,7 @@ export default class DegreeSquare {
   }
 
   execute() {
-    return correctValue((checkBigInt(this.changeNumber, 2) ** checkBigInt(2, this.changeNumber)).toLocaleString('fullwide', { useGrouping: false }))
+    return correctValue((checkBigInt(this.changeNumber, 2) ** checkBigInt(2, this.changeNumber)).toString())
   }
 
   undo() {

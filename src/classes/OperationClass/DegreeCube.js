@@ -7,7 +7,7 @@ export default class DegreeCube {
   }
 
   execute() {
-    return correctValue((checkBigInt(this.changeNumber, 3) ** checkBigInt(3, this.changeNumber)).toLocaleString('fullwide', { useGrouping: false }))
+    return correctValue((checkBigInt(this.changeNumber, 3) ** checkBigInt(3, this.changeNumber)).toString())
   }
 
   undo() {

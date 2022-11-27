@@ -11,7 +11,7 @@ export default class Percentage {
     return correctValue(`${this.mainValue * (this.percent / 100)}`)
   }
 
-  undo(percent = this.percent) {
-    return percent
+  undo() {
+    return this.percent
   }
 }

@@ -23,7 +23,7 @@ const executeTests = [
     title: 'Negative integer degree of the positive float number',
     valueX: '1.5',
     valueY: '-2',
-    result: '0.4444444444',
+    result: '0.44444444444',
   },
   {
     title: 'Postitive integer degree of the negative integer number',
@@ -47,7 +47,7 @@ const executeTests = [
     title: 'Negative integer degree of the negative float number',
     valueX: '-1.5',
     valueY: '-2',
-    result: '0.4444444444',
+    result: '0.44444444444',
   },
 ]
 
