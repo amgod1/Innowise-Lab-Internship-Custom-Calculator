@@ -13,6 +13,7 @@ import setResult from '../../functions/setResult.js'
 import selectAction from '../../functions/selectAction.js'
 import checkInstance from '../../functions/checkInstance.js'
 import checkInstanceUnique from '../../functions/checkInstanceUnique.js'
+import createNumButtons from '../../functions/createNumButtons.js'
 
 class Calculator extends RunCalculator {
   set1(command, value = this._value1) {
@@ -178,6 +179,7 @@ const calc = new Calculator({
 createButtons(['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eigth', 'nine', 'dot', 'plus', 'minus', 'multiply', 'division', 'degree-y', 'root-y'], calc)
 createUniqueButtons(['plus-minus', 'degree2', 'degree3', 'factorial', 'root2', 'root3'], calc)
 createMemoryButtons(['mc', 'm-plus', 'm-minus', 'mr'], calc)
+createNumButtons(calc)
 
 const acBtn = document.querySelector('.ac')
 acBtn.onclick = () => calc.resetCalculator()
