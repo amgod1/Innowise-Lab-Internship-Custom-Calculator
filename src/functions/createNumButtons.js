@@ -8,7 +8,9 @@ export default function createNumButtons(obj) {
       }
     }
 
-    if (e.code === 'NumpadAdd') {
+    if (e.code === 'NumpadDecimal') {
+      obj.input('.')
+    } else if (e.code === 'NumpadAdd') {
       obj.setSign(new SignEditor('+'))
     } else if (e.code === 'NumpadSubtract') {
       obj.setSign(new SignEditor('-'))

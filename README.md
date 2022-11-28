@@ -6,6 +6,7 @@
 
 > When you press the number keys, you will automatically set the first operand. As soon as you press ***an operation key*** (+, -, *, /, ^, √) you will be able to set the second operand. If you want to perform the selected operation, you must press ***the = key***. If you press the ***special operations keys*** (+/-, %, x!, x^2, x^3, 2√x, 3√x) the action will be executed to the last operand you set. If you want to return the previous value/prevent the operation you have to press the ***'back'*** key (works for all actions and operations except ***'memory keys'***). To delete all values and clear the input field press the ***'AC'*** key (does not clear calculator memory).
 
+-
 - if you press ***zero (0)*** key more than once, the operand value will remain correct (you can't set invalid numbers like **'00'**, **'000'** and so on)
 - if you press any ***natural number*** key after ***zero (0)***, the operand value will remain correct (you can't set invalid numbers like **'02'**, **'049'** and so on)
 - only ***one point*** is possible (.) for a floating point number (your can't set invalid numbers like ***'2.12.3'***, ***'0.012.235.5'*** and so on)
