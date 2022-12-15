@@ -15,7 +15,7 @@ export default function createNumButtons(obj) {
     } else if (e.code === 'NumpadSubtract') {
       obj.setSign(new SignEditor('-'))
     } else if (e.code === 'NumpadMultiply') {
-      obj.setSign(new SignEditor('*'))
+      obj.setSign(new SignEditor('x'))
     } else if (e.code === 'NumpadDivide') {
       obj.setSign(new SignEditor('/'))
     } else if (e.code === 'NumpadEnter') {

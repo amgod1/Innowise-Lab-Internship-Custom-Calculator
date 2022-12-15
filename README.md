@@ -6,7 +6,7 @@
 
 ## How to run the app:
 
-> When you press the number keys, you will automatically set the first operand. As soon as you press **_an operation key_** (+, -, \*, /, ^, √) you will be able to set the second operand. If you want to perform the selected operation, you must press **_the = key_**. If you press the **_special operations keys_** (+/-, %, x!, x^2, x^3, 2√x, 3√x) the action will be executed to the last operand you set. If you want to return the previous value/prevent the operation you have to press the **_'back'_** key (works for all actions and operations except **_'memory keys'_**). To delete all values and clear the input field press the **_'AC'_** key (does not clear calculator memory).
+> When you press the number keys, you will automatically set the first operand. As soon as you press **_an operation key_** (+, -, \*, /, ^, √) you will be able to set the second operand. If you want to perform the selected operation, you must press **_the = key_** or **_any other operator_**. If you press the **_special operations keys_** (+/-, %, x!, x^2, x^3, 2√x, 3√x) the action will be executed to the last operand you set. If you want to return the previous value/prevent the operation you have to press the **_'back'_** key (works for all actions and operations except **_'memory keys'_**). To delete all values and clear the input field press the **_'AC'_** key (does not clear calculator memory).
 
 - **numpad** support is **available**
 - if you press **_zero (0)_** key more than once, the operand value will remain correct (you can't set invalid numbers like **'00'**, **'000'** and so on)
@@ -84,7 +84,7 @@
 - the **_mc_** button **_clears_** the memorized result (after that it **_equals zero_**)
 - pressing the **_AC key does not clear_** the memorized result
 - memorized result is **_saved_** in the **_local store_** of the browser so you can't lose it so you cannot lose them unless you **_delete them yourself_**
-- **_addition_** and **_subtraction_** of the memorized result can **_only_** be performed with **_the m+_** & **_m- keys_**
+- **_addition_** and **_subtraction_** of the memorized result can **_only_** be performed with **_the m+_** & **_m- keys_** but you can but you can **_perfom different operations_** with it
 
 ### Theme management
 

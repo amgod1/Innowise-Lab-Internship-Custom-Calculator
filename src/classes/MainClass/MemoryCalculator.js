@@ -12,12 +12,12 @@ export default class extends CreateCalculator {
   }
 
   addMemory(value) {
-    this._memory = correctValue(Number(this._memory) + Number(value))
+    this._memory = correctValue(Number(this._memory) + Number(value)).toString()
     localStorage.setItem('memory', this._memory)
   }
 
   decreaseMemory(value) {
-    this._memory = correctValue(Number(this._memory) - Number(value))
+    this._memory = correctValue(Number(this._memory) - Number(value)).toString()
     localStorage.setItem('memory', this._memory)
   }
 

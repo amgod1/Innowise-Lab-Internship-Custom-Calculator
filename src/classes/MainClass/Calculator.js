@@ -64,19 +64,27 @@ class Calculator extends RunCalculator {
   }
 
   setSign(command) {
-    const oldSign = this.getSign()
-    this._sign = command.execute(this.getSign())
-    if (checkInstance(this.getHistory()[this.getHistory().length - 1])) {
+    if (!this.getValue1()) {
+      this.set1(new Number1('0'))
+      setHelper('v1', this.getValue1())
+      this.setHistory(command)
+    } else if (command.newSign !== this.getSign().slice(-1) && this.getValue2() === '') {
+      this.setHistory(command)
+    } else if (checkInstance(this.getHistory()[this.getHistory().length - 1])) {
       this.setValue2('')
       setHelper('v2', this.getValue2())
+      if (command.newSign !== this.getSign().slice(-1)) {
+        this.setHistory(command)
+      }
+    } else if (this.getValue2()) {
+      this.run()
+      this.setValue2('')
+      setHelper('v2', this.getValue2())
+      if (command.newSign !== this.getSign().slice(-1)) {
+        this.setHistory(command)
+      }
     }
-    if (this.getSign() !== oldSign) {
-      this.setHistory(command)
-    }
-    if (!this.getValue1()) {
-      this.setValue1('0')
-      setHelper('v1', this.getValue1())
-    }
+    this._sign = command.execute(this.getSign())
   }
 
   initSwap() {
@@ -163,8 +171,8 @@ class Calculator extends RunCalculator {
         setHelper('v1', this.getValue1())
       }
     } else {
-      setResult((this.getValue1()) ? this.getValue1() : 0)
-      setHelper('v1', (this.getValue1()) ? this.getValue1() : '')
+      setResult((this.getValue1()) ? this.getValue1() : '0')
+      setHelper('v1', (this.getValue1() && this.getValue1() !== '0') ? this.getValue1() : '')
     }
   }
 }
