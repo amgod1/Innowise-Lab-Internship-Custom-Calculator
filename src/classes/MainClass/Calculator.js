@@ -126,7 +126,6 @@ class Calculator extends RunCalculator {
       setHelper('v2', this.getValue2())
       this.calculate(selectAction(this.getSign().slice(-1), this.getValue1()))
     }
-    console.log(this.getHistory())
   }
 
   undoLast() {
