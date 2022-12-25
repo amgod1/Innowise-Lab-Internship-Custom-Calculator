@@ -27,6 +27,12 @@ class Calculator extends RunCalculator {
   }
 
   input(element) {
+    if (checkInstance(this.getHistory()[this.getHistory().length - 1]) && this.getValue1()) {
+      this.setValue2('')
+      this.set2(new Number2(element))
+      setHelper('v2', this.getValue2())
+      setResult(this.getValue2())
+    } else
     if (this.getValue2() === '' && this.getSign() === '') {
       if (this.getValue1() === '0' && element === '0') {
         setResult('0')
@@ -120,6 +126,7 @@ class Calculator extends RunCalculator {
       setHelper('v2', this.getValue2())
       this.calculate(selectAction(this.getSign().slice(-1), this.getValue1()))
     }
+    console.log(this.getHistory())
   }
 
   undoLast() {
