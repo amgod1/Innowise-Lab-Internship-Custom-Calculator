@@ -100,15 +100,15 @@
 
 # Folder structure:
 
-├── ...
-├── dist # production build created with webpack
-├── node_modules # all downloaded packages
-├── src # source files
-| ├── classes # all used classes
-| | ├── MainClass # chain of inherited classes necessary to create the calculator template
-| | ├── OperationClass # classes of operations necessary for the calculator functionality and operability
-| ├── functions # functions that simplify the creation and operation of the calculator
-├── tests # unit test using jest
+├── ...  
+├── dist # production build created with webpack  
+├── node_modules # all downloaded packages  
+├── src # source files  
+| ├── classes # all used classes  
+| | ├── MainClass # chain of inherited classes necessary to create the calculator template  
+| | ├── OperationClass # classes of operations necessary for the calculator functionality and operability  
+| ├── functions # functions that simplify the creation and operation of the calculator  
+├── tests # unit test using jest  
 └── ... # ect.
 
 Created by [Kamill](https://github.com/amgod1)
