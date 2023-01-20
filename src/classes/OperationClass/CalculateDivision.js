@@ -18,6 +18,5 @@ export default class CalculateDivision {
 
   undo() {
     return this.firstOperand
-    // return `${correctValue(Number(s1) * Number(this.secondOperand))}`
   }
 }

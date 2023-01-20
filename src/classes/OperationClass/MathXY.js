@@ -18,8 +18,5 @@ export default class MathXY {
 
   undo() {
     return this.firstOperand
-    // return (s1 < 0)
-    //   ? correctValue(-((-s1) ** this.secondOperand))
-    //   : correctValue(s1 ** this.secondOperand)
   }
 }

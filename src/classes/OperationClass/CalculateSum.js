@@ -17,6 +17,5 @@ export default class CalculateSum {
 
   undo() {
     return this.firstOperand
-    // return correctValue((checkBigInt(s1, this.secondOperand) - checkBigInt(this.secondOperand, s1)).toString())
   }
 }

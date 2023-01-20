@@ -14,6 +14,7 @@ import selectAction from '../../functions/selectAction.js'
 import checkInstance from '../../functions/checkInstance.js'
 import checkInstanceUnique from '../../functions/checkInstanceUnique.js'
 import createNumButtons from '../../functions/createNumButtons.js'
+import NewOperation from '../OperationClass/NewOperation.js'
 
 class Calculator extends RunCalculator {
   set1(command, value = this._value1) {
@@ -27,12 +28,12 @@ class Calculator extends RunCalculator {
   }
 
   input(element) {
-    if (checkInstance(this.getHistory()[this.getHistory().length - 1]) && this.getValue1()) {
+    if (checkInstance(this.getHistory()[this.getHistory().length - 1])) {
+      this.setHistory(new NewOperation(this.getValue1(), this.getValue2(), this.getSign()))
+      this.setValue1('')
       this.setValue2('')
-      this.set2(new Number2(element))
-      setHelper('v2', this.getValue2())
-      setResult(this.getValue2())
-    } else
+      this._sign = ''
+    }
     if (this.getValue2() === '' && this.getSign() === '') {
       if (this.getValue1() === '0' && element === '0') {
         setResult('0')
@@ -176,9 +177,17 @@ class Calculator extends RunCalculator {
         setResult(this.getValue1())
         setHelper('v1', this.getValue1())
       }
+    } else if (command instanceof NewOperation) {
+      const numbersBefore = command.undo()
+      this.setValue1(numbersBefore.v1)
+      this.setValue2(numbersBefore.v2)
+      this._sign = numbersBefore.sign
     } else {
       setResult((this.getValue1()) ? this.getValue1() : '0')
       setHelper('v1', (this.getValue1() && this.getValue1() !== '0') ? this.getValue1() : '')
+    }
+    if (this.getHistory()[this.getHistory().length - 1] instanceof NewOperation) {
+      this.undoLast()
     }
   }
 }
