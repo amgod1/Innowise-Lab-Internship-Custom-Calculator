@@ -16,7 +16,7 @@ export default class NewOperation {
   undo() {
     setHelper('v1', this.v1)
     setHelper('v2', this.v2)
-    setHelper('operand', this.operand)
+    setHelper('operand', this.operand.slice(-1))
     setResult(this.v1)
     return { v1: this.v1, v2: this.v2, sign: this.operand }
   }
