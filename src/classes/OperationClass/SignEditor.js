@@ -18,7 +18,18 @@ export default class SignEditor {
     return newValue
   }
 
-  undo(currentValue) {
-    return currentValue.slice(0, currentValue.length - 1)
+  undo(currentValue, value1) {
+    const signBefore = currentValue.slice(0, currentValue.length - 1)
+
+    if (signBefore.length >= 1) {
+      setResult(signBefore.slice(-1))
+      setHelper('operand', signBefore.slice(-1))
+    } else {
+      setHelper('operand', '')
+      setResult(value1 || 0)
+      setHelper('v1', value1 || '')
+    }
+
+    return signBefore
   }
 }

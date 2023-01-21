@@ -1,8 +1,10 @@
 import correctValue from '../../functions/correctValue.js'
 import checkBigInt from '../../functions/checkBigInt.js'
+import ExecuteHelpers from './ExecuteHelpers.js'
 
-export default class CalculateDiff {
+export default class CalculateDiff extends ExecuteHelpers {
   constructor(s2) {
+    super()
     this.secondOperand = s2
   }
 
@@ -16,6 +18,7 @@ export default class CalculateDiff {
   }
 
   undo() {
+    this.executeHelpers(this.firstOperand, this.secondOperand)
     return this.firstOperand
   }
 }

@@ -44,6 +44,10 @@ export default class CreateCalculator {
 
   // make use of sign
 
+  updateSign(newValue) {
+    this._sign = newValue
+  }
+
   getSign() {
     return this._sign
   }

@@ -17,12 +17,12 @@ import createNumButtons from '../../functions/createNumButtons.js'
 import NewOperation from '../OperationClass/NewOperation.js'
 
 class Calculator extends RunCalculator {
-  set1(command, value = this._value1) {
+  set1(command, value = this.getValue1()) {
     this.setValue1(command.execute(value))
     this.setHistory(command)
   }
 
-  set2(command, value = this._value2) {
+  set2(command, value = this.getValue2()) {
     this.setValue2(command.execute(value))
     this.setHistory(command)
   }
@@ -82,14 +82,14 @@ class Calculator extends RunCalculator {
       setHelper('v2', this.getValue2())
       if (command.newSign !== this.getSign().slice(-1)) {
         this.setHistory(command)
-      } else this.setHistory('repeatSign')
+      } else this.setHistory(null)
     } else if (this.getValue2()) {
       this.run()
       this.setValue2('')
       setHelper('v2', this.getValue2())
       if (command.newSign !== this.getSign().slice(-1)) {
         this.setHistory(command)
-      } else this.setHistory('repeatSign')
+      } else this.setHistory(null)
     }
     this._sign = command.execute(this.getSign())
   }
@@ -111,9 +111,9 @@ class Calculator extends RunCalculator {
   }
 
   initPercentage() {
-    if (!!this.getValue2() && this.getValue2() !== '0') {
+    if (!!Number(this.getValue2())) {
       this.finalPercentage(selectAction('%', this.getValue1()), this.getValue2())
-    } else if (!!this.getValue1() && this.getValue1() !== '0') {
+    } else if (!!Number(this.getValue1())) {
       this.finalPercentage(selectAction('%', this.getValue1()))
     }
   }
@@ -134,59 +134,35 @@ class Calculator extends RunCalculator {
 
     if (command instanceof Number1) {
       this.setValue1(command.undo(this.getValue1()))
-      if (this.getValue1().length >= 1) {
-        setResult(this.getValue1())
-        setHelper('v1', this.getValue1())
-      } else {
-        setResult('0')
-        setHelper('v1', '')
-      }
-    } else if (command instanceof Number2) {
-      this.setValue2(command.undo(this.getValue2()))
-      if (this.getValue2().length >= 1) {
-        setResult(this.getValue2())
-        setHelper('v2', this.getValue2())
-      } else if (this.getSign().length >= 1) {
-        setResult(this.getSign().slice(-1))
-        setHelper('operand', this.getSign().slice(-1))
-        setHelper('v2', '')
-      }
-    } else if (command instanceof SignEditor) {
-      this._sign = command.undo(this.getSign())
-      if (this.getSign().length >= 1) {
-        setResult(this.getSign().slice(-1))
-        setHelper('operand', this.getSign().slice(-1))
-      } else {
-        setHelper('operand', '')
-        setResult((this.getValue1()) ? this.getValue1() : 0)
-        setHelper('v1', (this.getValue1()) ? this.getValue1() : '')
-      }
-    } else if (checkInstance(command)) {
+    }
+
+    if (command instanceof Number2) {
+      this.setValue2(command.undo(this.getValue2(), this.getSign()))
+    }
+
+    if (command instanceof SignEditor) {
+      this.updateSign(command.undo(this.getSign(), this.getValue1()))
+    }
+
+    if (checkInstance(command)) {
       this.setValue1(command.undo())
       this.setValue2(command.getSecondOperand())
-      setHelper('v2', (command.getSecondOperand()))
-      setHelper('v1', this.getValue1())
-      setResult(this.getValue1())
-    } else if (checkInstanceUnique(command)) {
-      if (!!this.getValue2() && this.getValue2() !== '0') {
-        this.setValue2(command.undo())
-        setResult(this.getValue2())
-        setHelper('v2', this.getValue2())
-      } else if (!!this.getValue1() && this.getValue1() !== '0') {
-        this.setValue1(command.undo())
-        setResult(this.getValue1())
-        setHelper('v1', this.getValue1())
-      }
-    } else if (command instanceof NewOperation) {
+    }
+
+    if (checkInstanceUnique(command)) {
+      const [first, second] = command.undo(!!Number(this.getValue1()), !!Number(this.getValue2()))
+      first && this.setValue1(first)
+      second && this.setValue2(second)
+    }
+
+    if (command instanceof NewOperation) {
       const numbersBefore = command.undo()
       this.setValue1(numbersBefore.v1)
       this.setValue2(numbersBefore.v2)
-      this._sign = numbersBefore.sign
-    } else {
-      setResult((this.getValue1()) ? this.getValue1() : '0')
-      setHelper('v1', (this.getValue1() && this.getValue1() !== '0') ? this.getValue1() : '')
+      this.updateSign(numbersBefore.sign)
     }
-    if (this.getHistory()[this.getHistory().length - 1] instanceof NewOperation || command === 'repeatSign') {
+
+    if (this.getHistory()[this.getHistory().length - 1] instanceof NewOperation || command === null) {
       this.undoLast()
     }
   }
@@ -204,14 +180,7 @@ createUniqueButtons(['plus-minus', 'degree2', 'degree3', 'factorial', 'root2', '
 createMemoryButtons(['mc', 'm-plus', 'm-minus', 'mr'], calc)
 createNumButtons(calc)
 
-const acBtn = document.querySelector('.ac')
-acBtn.onclick = () => calc.resetCalculator()
-
-const equalBtn = document.querySelector('.equal')
-equalBtn.onclick = () => calc.run()
-
-const percentageBtn = document.querySelector('.percent')
-percentageBtn.onclick = () => calc.initPercentage()
-
-const backBtn = document.querySelector('.back')
-backBtn.onclick = () => calc.undoLast()
+document.querySelector('.ac').onclick = () => calc.resetCalculator()
+document.querySelector('.equal').onclick = () => calc.run()
+document.querySelector('.percent').onclick = () => calc.initPercentage()
+document.querySelector('.back').onclick = () => calc.undoLast()

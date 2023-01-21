@@ -1,7 +1,9 @@
 import correctValue from '../../functions/correctValue.js'
+import ExecuteHelpers from './ExecuteHelpers.js'
 
-export default class CalculateDivision {
+export default class CalculateDivision extends ExecuteHelpers {
   constructor(s2) {
+    super()
     this.secondOperand = s2
   }
 
@@ -17,6 +19,7 @@ export default class CalculateDivision {
   }
 
   undo() {
+    this.executeHelpers(this.firstOperand, this.secondOperand)
     return this.firstOperand
   }
 }
