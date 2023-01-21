@@ -148,7 +148,7 @@ class Calculator extends RunCalculator {
     }
 
     if (checkInstanceUnique(command)) {
-      const [first, second] = command.undoUnique(!!Number(this.getValue1()), !!Number(this.getValue2()))
+      const [first, second] = command.undoUnique(false, !!Number(this.getValue1()), !!Number(this.getValue2()))
       first && this.setValue1(first)
       second && this.setValue2(second)
     }

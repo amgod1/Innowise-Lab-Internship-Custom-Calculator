@@ -73,7 +73,7 @@ describe('Testing CalculateDivision:', () => {
     test(el.title, () => {
       const sampleTest = new CalculateDivision(el.secondValue)
       sampleTest.execute(el.firstValue)
-      expect(sampleTest.undo()).toBe(el.firstValue)
+      expect(sampleTest.undo(false)).toBe(el.firstValue)
     })
   })
 })

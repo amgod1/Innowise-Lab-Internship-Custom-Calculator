@@ -71,7 +71,8 @@ describe('Testing PositiveNegative:', () => {
   undoTests.map((el) => {
     test(el.title, () => {
       const sampleTest = new PositiveNegative(el.value)
-      expect(sampleTest.undo(sampleTest.execute())).toBe(el.value)
+      sampleTest.execute()
+      expect(sampleTest.undoUnique(true)).toBe(el.value)
     })
   })
 })

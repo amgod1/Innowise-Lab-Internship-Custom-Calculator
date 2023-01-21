@@ -90,7 +90,7 @@ describe('Testing DegreeSquare:', () => {
     test(el.title, () => {
       const sampleTest = new DegreeSquare(el.value)
       sampleTest.execute()
-      expect(sampleTest.undo()).toBe(el.value)
+      expect(sampleTest.undoUnique(true)).toBe(el.value)
     })
   })
 })

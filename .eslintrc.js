@@ -26,6 +26,7 @@ module.exports = {
     'no-mixed-operators': 0,
     'no-extra-boolean-cast': 0,
     'no-unused-expressions': 0,
+    'default-param-last': 0,
     'no-undef': 0,
     'max-len': 0,
   },

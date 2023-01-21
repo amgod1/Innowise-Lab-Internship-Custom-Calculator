@@ -83,7 +83,8 @@ describe('Testing CalculateDegree:', () => {
   undoTests.map((el) => {
     test(el.title, () => {
       const sampleTest = new CalculateMult(el.secondValue)
-      expect(sampleTest.undo(sampleTest.execute(el.firstValue))).toBe(el.firstValue)
+      sampleTest.execute(el.firstValue)
+      expect(sampleTest.undo(false)).toBe(el.firstValue)
     })
   })
 })

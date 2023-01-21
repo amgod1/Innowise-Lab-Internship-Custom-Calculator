@@ -62,7 +62,7 @@ describe('Testing Percentage:', () => {
     test(el.title, () => {
       const sampleTest = new Percentage(el.value)
       sampleTest.execute(el.percent)
-      expect(sampleTest.undo()).toBe(el.percent)
+      expect(sampleTest.undoUnique(true)).toBe(el.percent)
     })
   })
 })

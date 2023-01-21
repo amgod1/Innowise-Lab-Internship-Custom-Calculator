@@ -62,7 +62,7 @@ describe('Testing MathXY:', () => {
     test(el.title, () => {
       const sampleTest = new MathXY(el.valueY)
       sampleTest.execute(el.valueX)
-      expect(sampleTest.undo()).toBe(el.valueX)
+      expect(sampleTest.undo(false)).toBe(el.valueX)
     })
   })
 })

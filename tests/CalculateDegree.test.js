@@ -106,7 +106,7 @@ describe('Testing CalculateDegree:', () => {
     test(el.title, () => {
       const sampleTest = new CalculateDegree(el.valueY)
       sampleTest.execute(el.valueX)
-      expect(sampleTest.undo()).toBe(el.valueX)
+      expect(sampleTest.undo(false)).toBe(el.valueX)
     })
   })
 })

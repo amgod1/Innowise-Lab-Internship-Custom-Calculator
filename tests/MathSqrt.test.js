@@ -36,7 +36,7 @@ describe('Testing MathSqrt:', () => {
     test(el.title, () => {
       const sampleTest = new MathSqrt(el.value)
       sampleTest.execute()
-      expect(sampleTest.undo()).toBe(el.value)
+      expect(sampleTest.undoUnique(true)).toBe(el.value)
     })
   })
 })
