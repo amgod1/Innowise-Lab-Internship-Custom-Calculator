@@ -13,7 +13,7 @@ export default class Percentage extends ExecuteHelpers {
     return correctValue(`${this.mainValue * (this.percent / 100)}`)
   }
 
-  undo(value1, value2) {
+  undoUnique(value1, value2) {
     if (value2) {
       this.executeSecondHelper(this.percent)
       return [null, this.percent]

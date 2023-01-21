@@ -15,9 +15,4 @@ export default class CalculateDegree extends ExecuteHelpers {
     this.firstOperand = s1
     return `${correctValue(Number(s1) ** Number(this.secondOperand))}`
   }
-
-  undo() {
-    this.executeHelpers(this.firstOperand, this.secondOperand)
-    return this.firstOperand
-  }
 }

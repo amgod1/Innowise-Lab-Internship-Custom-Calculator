@@ -17,9 +17,4 @@ export default class MathXY extends ExecuteHelpers {
       ? `${correctValue(-((-s1) ** (1 / this.secondOperand)))}`
       : `${correctValue(s1 ** (1 / this.secondOperand))}`
   }
-
-  undo() {
-    this.executeHelpers(this.firstOperand, this.secondOperand)
-    return this.firstOperand
-  }
 }

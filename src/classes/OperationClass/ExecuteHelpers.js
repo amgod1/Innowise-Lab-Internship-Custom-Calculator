@@ -18,7 +18,12 @@ export default class ExecuteHelpers {
     setHelper('v2', value)
   }
 
-  undo(value1, value2) {
+  undo() {
+    this.executeHelpers(this.firstOperand, this.secondOperand)
+    return this.firstOperand
+  }
+
+  undoUnique(value1, value2) {
     if (value2) {
       this.executeSecondHelper(this.changeNumber)
       return [null, this.changeNumber]

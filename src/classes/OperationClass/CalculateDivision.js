@@ -17,9 +17,4 @@ export default class CalculateDivision extends ExecuteHelpers {
       ? `${correctValue(Number(s1) / Number(this.secondOperand))}`
       : '0'
   }
-
-  undo() {
-    this.executeHelpers(this.firstOperand, this.secondOperand)
-    return this.firstOperand
-  }
 }

@@ -16,9 +16,4 @@ export default class CalculateSum extends ExecuteHelpers {
     this.firstOperand = s1
     return correctValue((checkBigInt(s1, this.secondOperand) + checkBigInt(this.secondOperand, s1)).toString())
   }
-
-  undo() {
-    this.executeHelpers(this.firstOperand, this.secondOperand)
-    return this.firstOperand
-  }
 }
