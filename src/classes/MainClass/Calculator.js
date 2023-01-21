@@ -32,7 +32,7 @@ class Calculator extends RunCalculator {
       this.setHistory(new NewOperation(this.getValue1(), this.getValue2(), this.getSign()))
       this.setValue1('')
       this.setValue2('')
-      this._sign = ''
+      this.updateSign('')
     }
     if (this.getValue2() === '' && this.getSign() === '') {
       if (this.getValue1() === '0' && element === '0') {
@@ -95,16 +95,14 @@ class Calculator extends RunCalculator {
   }
 
   initSwap() {
-    if (!!this.getValue2() && this.getValue2() !== '0') {
-      if (this.getUniqueAction() === 'x!' && this.getValue2() <= 0) {
-        return
-      } else if (this.getUniqueAction() === '2√x' && this.getValue2() <= 0) {
+    const [first, second] = [Number(this.getValue1()), Number(this.getValue2())]
+
+    if (!!second) {
+      if (second <= 0 && this.getUniqueAction() === 'x!' || this.getUniqueAction() === '2√x') {
         return
       } else this.finalSwap(selectAction(this.getUniqueAction(), this.getValue2()), false)
-    } else if (!!this.getValue1() && this.getValue1() !== '0') {
-      if (this.getUniqueAction() === 'x!' && this.getValue1() <= 0) {
-        return
-      } else if (this.getUniqueAction() === '2√x' && this.getValue1() <= 0) {
+    } else if (!!first) {
+      if (first <= 0 && this.getUniqueAction() === 'x!' || this.getUniqueAction() === '2√x') {
         return
       } else this.finalSwap(selectAction(this.getUniqueAction(), this.getValue1()), true)
     }
